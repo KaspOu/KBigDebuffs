@@ -1,9 +1,9 @@
-## Interface: 110000
+## Interface: 110000, 110002
 ## Title: |cff00ff00K|r Big Debuffs
 ## Title-frFR: |cff00ff00K|r Big Debuffs
 ## Notes: Resize buffs & debuffs. Modify max limit. Modify alignment.
 ## Notes-frFR: Redimensionne les buffs/debuffs. Augmente le nombre d'icones. Modifie l'alignement.
-## Version: 11.0.001
+## Version: 11.0.002
 ## Author: Kallye of Elune
 ## SavedVariables: KBigDebuffsOptions
 ## IconTexture: Interface\AddOns\KNameplateColor\Logo32
