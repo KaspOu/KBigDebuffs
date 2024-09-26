@@ -67,6 +67,14 @@ function ns.AddMsgErr(msg)
 		DEFAULT_CHAT_FRAME:AddMessage(format("%s%s: %s|r", l.RDL, ns.TITLE, msg or ""));
 	end
 end
+--[[
+!  Debug chat
+]]
+function ns.AddMsgDebug(msg, force)
+	if (DEFAULT_CHAT_FRAME and _G[ns.OPTIONS_NAME].DebugMode or force) then
+		DEFAULT_CHAT_FRAME:AddMessage(format("DEBUG: %s%s|r", l.YLL, msg or ""));
+	end
+end
 
 KBD_TITLE = ns.TITLE; -- global variable, for conflict detection
 
