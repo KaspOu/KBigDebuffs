@@ -1,4 +1,4 @@
-## Interface: 110007, 40401, 11506
+## Interface: 110007, 40401, 40402, 11506
 ## Title: |cff00ff00K|r Big Debuffs
 ## Title-frFR: |cff00ff00K|r Big Debuffs
 ## Notes: Resize buffs & debuffs. Modify max limit. Modify alignment.
