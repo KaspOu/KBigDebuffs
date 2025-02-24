@@ -1,16 +1,16 @@
-## Interface: 110007, 40401, 40402, 11506
+## Interface: 110007, 110100, 40402, 11506
 ## Title: |cff00ff00K|r Big Debuffs
 ## Title-frFR: |cff00ff00K|r Big Debuffs
 ## Notes: Resize buffs & debuffs. Modify max limit. Modify alignment.
 ## Notes-frFR: Redimensionne les buffs/debuffs. Augmente le nombre d'icones. Modifie l'alignement.
-## Version: 11.0.702
+## Version: 11.1.001
 ## Author: Kallye of Elune
 ## SavedVariables: KBigDebuffsOptions
 ## IconTexture: Interface\AddOns\KBigDebuffs\Logo32
 
 ## X-Category: Unit Frames, Interface Enhancements
 ## X-License: MIT
-## X-Website: https://bitbucket.org/KaspOu/kbigdebuffs/
+## X-Website: https://github.com/KaspOu/KBigDebuffs/
 ## X-Curse-Project-ID: 1026841
 
 Core\KBigDebuffs.globals.lua
