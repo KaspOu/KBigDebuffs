@@ -12,13 +12,14 @@ local defaultOptions = {
 	Version = ns.VERSION,
 
 	BuffsScale = 0.75,
-	MaxBuffs = 8,
+	MaxBuffs = CompactUnitFrame_GetOptionDisplayOnlyDispellableDebuffs and 8 or ns.DEFAULT_MAXBUFFS,
 	BuffsPerLine = 4,
 	BuffsVertical = false,
 	DebuffsScale = 1.25,
-	MaxDebuffs = 3,
+	MaxDebuffs = ns.DEFAULT_MAXBUFFS,
 	DebuffsPerLine = 9,
 	DebuffsVertical = false,
+	UseTaintMethod = false,
 
 	ShowMsgNormal = true,
 	ShowMsgWarning = true,

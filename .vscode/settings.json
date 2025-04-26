@@ -40,7 +40,21 @@
         "UIDropDownMenu_GetSelectedValue",
         "UIDropDownMenu_CreateInfo",
         "UIDROPDOWNMENU_MENU_LEVEL",
-        "OpacitySliderFrame"
+        "OpacitySliderFrame",
+        "Mixin",
+        "CreateColor",
+        "CopyTable",
+        "GameTooltip",
+        "SOUNDKIT",
+        "CompactUnitFrame_GetOptionDisplayOnlyDispellableDebuffs",
+        "CompactUnitFrame_GetOptionDisplayDebuffs",
+        "CompactUnitFrame_HideAllDebuffs",
+        "CompactUnitFrame_UpdatePrivateAuras",
+        "CompactUnitFrame_HideAllBuffs",
+        "CompactUnitFrame_UtilSetDebuff",
+        "CompactUnitFrame_UtilSetBuff",
+        "CompactUnitFrame_IsAuraInstanceIDBlocked",
+        "BOSS_DEBUFF_SIZE_INCREASE"
     ],
     "cSpell.words": [
         "prepatch"
@@ -81,6 +95,6 @@
         "utf8": "disable"
     },
     "Lua.workspace.library": [
-        "c:\\Users\\kaspo\\.cursor\\extensions\\ketho.wow-api-0.17.6\\Annotations"
+        "c:\\Users\\Utilisateur\\.cursor\\extensions\\ketho.wow-api-0.20.6\\Annotations\\Core"
     ]
 }

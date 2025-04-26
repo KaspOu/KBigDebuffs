@@ -4,17 +4,93 @@ local l = ns.I18N;
 -- * avoid conflict override
 if ns.CONFLICT then return; end
 
+ns.USE_MAXBUFFS_TAINT_METHOD = (CompactUnitFrame_GetOptionDisplayOnlyDispellableDebuffs == nil) -- maxBuffs only
 
 local DEFAULT_MAXBUFFS = ns.DEFAULT_MAXBUFFS or 3
 local DEFAULT_MAXDEBUFFS = DEFAULT_MAXBUFFS
+
 --[[
 ! Manage buffs
 - Scale buffs / debuffs
 ]]
+		-- ! Blizzard original method modified, from CompactUnitFrame
+		-- * alternative safe method (else maxBuffs taints frame)
+		function ns.CompactUnitFrame_UpdateAurasInternal(frame, unitAuraUpdateInfo)
+			if frame.isLootObject then
+				return;
+			end
+
+			local displayOnlyDispellableDebuffs = CompactUnitFrame_GetOptionDisplayOnlyDispellableDebuffs(frame, frame.optionTable);
+			local ignoreBuffs = not frame.buffFrames or not frame.optionTable.displayBuffs or frame.maxBuffs == 0;
+			local displayDebuffs = CompactUnitFrame_GetOptionDisplayDebuffs(frame, frame.optionTable);
+			local ignoreDebuffs = not frame.debuffFrames or not displayDebuffs or frame.maxDebuffs == 0;
+			local ignoreDispelDebuffs = ignoreDebuffs or not frame.dispelDebuffFrames or not frame.optionTable.displayDispelDebuffs or frame.maxDispelDebuffs == 0;
+
+			-- modification start
+			local maxBuffs = _G[ns.OPTIONS_NAME].MaxBuffs
+    		local maxDebuffs = _G[ns.OPTIONS_NAME].MaxDebuffs
+			local debuffsChanged = not ignoreBuffs;
+			local buffsChanged = not ignoreDebuffs;
+			-- modification end
+
+			if debuffsChanged then
+				local frameNum = 1;
+				-- local maxDebuffs = frame.maxDebuffs; -- modification
+				frame.debuffs:Iterate(function(auraInstanceID, aura)
+					if frameNum > maxDebuffs then
+						return true;
+					end
+
+					if CompactUnitFrame_IsAuraInstanceIDBlocked(frame, auraInstanceID) then
+						return false;
+					end
+
+					local debuffFrame = frame.debuffFrames[frameNum];
+					CompactUnitFrame_UtilSetDebuff(debuffFrame, aura);
+					frameNum = frameNum + 1;
+
+					if aura.isBossAura then
+						-- Boss auras are about twice as big as normal debuffs, so we may need to display fewer buffs
+						local bossDebuffScale = (debuffFrame.baseSize + BOSS_DEBUFF_SIZE_INCREASE)/debuffFrame.baseSize;
+						maxDebuffs = maxDebuffs - (bossDebuffScale - 1);
+					end
+
+					return false;
+				end);
+
+				CompactUnitFrame_HideAllDebuffs(frame, frameNum);
+				CompactUnitFrame_UpdatePrivateAuras(frame);
+			end
+
+			if buffsChanged then
+				local frameNum = 1;
+				-- local maxBuffs = frame.maxBuffs; -- modification
+				frame.buffs:Iterate(function(auraInstanceID, aura)
+					if frameNum > maxBuffs then
+						return true;
+					end
+					local buffFrame = frame.buffFrames[frameNum];
+					CompactUnitFrame_UtilSetBuff(buffFrame, aura);
+					frameNum = frameNum + 1;
+
+					return false;
+				end);
+
+				CompactUnitFrame_HideAllBuffs(frame, frameNum);
+			end
+			-- modification (remove dispelsChanged)
+		end
+
+-- Store frames waiting for combat end
+local pendingFrames = {}
 
 local function FrameIsCompact(frame)
 	local getName = frame:GetName();
 	return getName ~=nil and strsub(getName, 0, 7) == "Compact"
+end
+local function FrameIsPet(frame)
+	local getName = frame:GetName();
+	return getName ~=nil and string.find(getName, "Pet") ~= nil
 end
 
 
@@ -26,8 +102,8 @@ local OrientationEnum = {
 }
 
 local function anchorPoints(frameIdx, lineSize, orientation)
-	local newLine = (lineSize ~= nil) and (math.fmod(frameIdx-1, lineSize) == 0)
-	local relatedIdx = newLine and (frameIdx-lineSize) or (frameIdx-1)
+	local isNewLine = (lineSize ~= nil) and (math.fmod(frameIdx-1, lineSize) == 0)
+	local relatedIdx = isNewLine and (frameIdx-lineSize) or (frameIdx-1)
 
 	local alignments = {
 		-- orientation =  point, relatedPoint, newLineRelatedPoint
@@ -40,61 +116,72 @@ local function anchorPoints(frameIdx, lineSize, orientation)
 
 	local point, relatedPoint =
 		selectedAlignment[1],
-		(not newLine) and selectedAlignment[2] or selectedAlignment[3];
-	return newLine, point, relatedIdx, relatedPoint
+		(not isNewLine) and selectedAlignment[2] or selectedAlignment[3];
+	return isNewLine, point, relatedIdx, relatedPoint
 end
 
 --- Manage the display and scaling of buffs & debuffs on group frames.
---- @param frame frame The parent frame on which buffs or debuffs are displayed.
---- @param frameChilds table Table containing child frames (buffs/debuffs).
---- @param frameType string Type of frames to manage ('Buff', 'Debuff', 'DispelDebuff').
---- @param defaultMax number Blizzard max default.
---- @param maxCount number Maximum number of buffs/debuffs to display.
---- @param scale number Scale factor for the buffs/debuffs.
---- @param lineSize number Number of slots per line
---- @param orientation string OrientationEnum: Determines the alignment.
---- @param blizzardOrientation string OrientationEnum: Blizzard original alignment
-local function ManageUnitFrames(frame, frameChilds, frameType, defaultMax, maxCount, scale, lineSize, orientation, blizzardOrientation)
-	if InCombatLockdown() or frame:IsForbidden() or not FrameIsCompact(frame) then
+--- @param param table Object containing all parameters
+local function ManageUnitFrames(param)
+	if not FrameIsCompact(param.frame) or FrameIsPet(param.frame) or param.frame:IsForbidden() then
 		return
 	end
-    local frameName = frame:GetName() .. frameType
-	local maxProp = "max"..frameType.."s"
-	-- Edit mode: try safe value before exit (do not work well :/)
-	if EditModeManagerFrame and EditModeManagerFrame:IsEditModeActive() then
-		frame[maxProp] = 0
-		return;
+    local frameName = param.frame:GetName() .. param.frameType
+	if InCombatLockdown() then
+		pendingFrames[frameName] = param
+		return
 	end
 
-	-- addSlots and setPoints
-	if maxCount ~= frame[maxProp] then
+	local BLIZZARD_MAX_PROP = "max"..param.frameType.."s" -- frame.maxBuffs / .maxDebuffs / .maxDispelDebuff
+	local defaultMaxProp = "defaultMax"..param.frameType.."s" -- save BLizzard MAX first time
+	param.frame[defaultMaxProp] = param.frame[defaultMaxProp] or param.frame[BLIZZARD_MAX_PROP]
+
+	if param.maxCount > param.frame[defaultMaxProp] or param.lineSize < param.maxCount or param.orientation ~= param.blizzardOrientation then
+		-- add missing icons and re-SetPoints
+		-- TODO reposition first icon
 		-- start loop at first icon not matching blizz positioning
-		local loopStart = math.min(defaultMax + 1, lineSize + 1)
-		if orientation ~= blizzardOrientation then
+		local loopStart = math.min(param.defaultMax + 1, param.lineSize + 1)
+		if param.orientation ~= param.blizzardOrientation then
 			loopStart = 2
 		end
-		for fId = loopStart, maxCount do
-			local child = _G[frameName .. fId]
-			if not _G[frameName .. fId] then
-				child = CreateFrame("Button", frameName .. fId, frame, "Compact" .. frameType .. "Template")
-				child:SetScale(scale)
+		for childIdx = loopStart, param.maxCount do
+			local isNewChild = false
+			local child = _G[frameName .. childIdx]
+			if not _G[frameName .. childIdx] then
+				child = CreateFrame("Button", frameName .. childIdx, param.frame, "Compact" .. param.frameType .. "Template")
+				child:SetScale(param.scale)
+				if param.frameChilds[childIdx] == nil then
+					param.frameChilds[childIdx] = child
+				end
+				isNewChild = true
 			end
-			local newLine, point, relativeId, relativePoint = anchorPoints(fId, lineSize, orientation)
-			if newLine or orientation ~= blizzardOrientation then
-				child:ClearAllPoints()
+			local isNewLine, point, relativeIdx, relativePoint = anchorPoints(childIdx, param.lineSize, param.orientation)
+			if isNewChild or isNewLine or param.orientation ~= param.blizzardOrientation then
+				-- child:ClearAllPoints();
+				child:SetPoint(point, _G[frameName .. relativeIdx], relativePoint)
 			end
-			child:SetPoint(point, _G[frameName .. relativeId], relativePoint)
 		end
-		frame[maxProp] = maxCount
+	end
+	if param.useTaintMethod and param.maxCount ~= param.frame[BLIZZARD_MAX_PROP] then
+		param.frame[BLIZZARD_MAX_PROP] = param.maxCount -- ! Taints frame
 	end
 
 	-- rescaling
-    if scale ~= 1 and frame._lastScale ~= scale then
-		for _, child in ipairs(frameChilds) do
-			child:SetScale(scale);
+    local lastScale = param.frame:GetAttribute("_lastScale") or 1
+    if lastScale ~= param.scale then
+		for _, child in ipairs(param.frameChilds) do
+			child:SetScale(param.scale);
 		end
-		frame._lastScale = scale
+		param.frame:SetAttribute("_lastScale", param.scale)
     end
+end
+
+-- Event handler for combat end
+function ns.OnCombatEnd()
+	for frameName, param in pairs(pendingFrames) do
+		ManageUnitFrames(param)
+		pendingFrames[frameName] = nil
+	end
 end
 
 function ns.Hook_ManageBuffs(frame)
@@ -102,7 +189,21 @@ function ns.Hook_ManageBuffs(frame)
     local scale = _G[ns.OPTIONS_NAME].BuffsScale
 	local slotsPerLine = _G[ns.OPTIONS_NAME].BuffsPerLine
 	local orientation = not _G[ns.OPTIONS_NAME].BuffsVertical and OrientationEnum.LeftThenUp or OrientationEnum.UpThenLeft
-	ManageUnitFrames(frame, frame.buffFrames, "Buff", DEFAULT_MAXBUFFS, max, scale, slotsPerLine, orientation, OrientationEnum.LeftThenUp)
+	local useTaintMethod = ns.USE_MAXBUFFS_TAINT_METHOD or _G[ns.OPTIONS_NAME].UseTaintMethod
+
+	ManageUnitFrames({
+		frame = frame,
+		frameChilds = frame.buffFrames,
+		frameType = "Buff",
+		defaultMax = DEFAULT_MAXBUFFS,
+		maxCount = max,
+		scale = scale,
+		lineSize = slotsPerLine,
+		orientation = orientation,
+		blizzardOrientation = OrientationEnum.LeftThenUp,
+		useTaintMethod = useTaintMethod,
+		retries = 0
+	})
 end
 
 function ns.Hook_ManageDebuffs(frame)
@@ -110,7 +211,21 @@ function ns.Hook_ManageDebuffs(frame)
     local scale = _G[ns.OPTIONS_NAME].DebuffsScale
 	local slotsPerLine = _G[ns.OPTIONS_NAME].DebuffsPerLine
 	local orientation = not _G[ns.OPTIONS_NAME].DebuffsVertical and OrientationEnum.RightThenUp or OrientationEnum.UpThenRight
-	ManageUnitFrames(frame, frame.debuffFrames, "Debuff", DEFAULT_MAXDEBUFFS, max, scale, slotsPerLine, orientation, OrientationEnum.RightThenUp)
+	local useTaintMethod = ns.USE_MAXBUFFS_TAINT_METHOD or _G[ns.OPTIONS_NAME].UseTaintMethod
+
+	ManageUnitFrames({
+		frame = frame,
+		frameChilds = frame.debuffFrames,
+		frameType = "Debuff",
+		defaultMax = DEFAULT_MAXDEBUFFS,
+		maxCount = max,
+		scale = scale,
+		lineSize = slotsPerLine,
+		orientation = orientation,
+		blizzardOrientation = OrientationEnum.RightThenUp,
+		useTaintMethod = useTaintMethod,
+		retries = 0
+	})
 end
 
 -- Will be used in standalone addon
@@ -132,19 +247,41 @@ local function isEnabled(options)
 		)
 end
 
-local function determineAppropriateHook(hookName, lineSize, maxIcons, verticalAlign)
-	if verticalAlign or lineSize < maxIcons then
-		return "CompactUnitFrame_UpdateAll"
+-- Determine appropriate hook
+-- If positions are modified, we have to hook reposition method instead
+local function determineAppropriateHook(setMaxHookName, lineSize, maxIcons, defaultMaxIcons, verticalAlign)
+	if verticalAlign or lineSize < maxIcons or lineSize < defaultMaxIcons then
+		return "DefaultCompactUnitFrameSetup"
 	end
-	return hookName;
+	return setMaxHookName
+end
+
+function ns.isFlickerWarningShowed(options)
+	local buffsHook = determineAppropriateHook("", options.BuffsPerLine, options.MaxBuffs, DEFAULT_MAXBUFFS, options.BuffsVertical)
+	local debuffsHook = determineAppropriateHook("", options.DebuffsPerLine, options.MaxDebuffs, DEFAULT_MAXDEBUFFS, options.DebuffsVertical)
+	return buffsHook..debuffsHook ~= ""
 end
 local function onSaveOptions(self, options)
     if not ns._UnitDebuffsHooked and isEnabled(options) then
         ns._UnitDebuffsHooked = true
-		local buffsHook = determineAppropriateHook("CompactUnitFrame_SetMaxBuffs", options.BuffsPerLine, options.MaxBuffs, options.BuffsVertical)
-		local debuffsHook = determineAppropriateHook("CompactUnitFrame_SetMaxDebuffs", options.DebuffsPerLine, options.MaxDebuffs, options.DebuffsVertical)
-        hooksecurefunc(buffsHook, ns.Hook_ManageBuffs);
-        hooksecurefunc(debuffsHook, ns.Hook_ManageDebuffs);
+		local buffsHook = determineAppropriateHook("CompactUnitFrame_SetMaxBuffs", options.BuffsPerLine, options.MaxBuffs, DEFAULT_MAXBUFFS, options.BuffsVertical)
+		local debuffsHook = determineAppropriateHook("CompactUnitFrame_SetMaxDebuffs", options.DebuffsPerLine, options.MaxDebuffs, DEFAULT_MAXDEBUFFS, options.DebuffsVertical)
+		local useTaintMethod = ns.USE_MAXBUFFS_TAINT_METHOD or _G[ns.OPTIONS_NAME].UseTaintMethod
+        hooksecurefunc(buffsHook, ns.Hook_ManageBuffs)
+        hooksecurefunc(debuffsHook, ns.Hook_ManageDebuffs)
+		if not useTaintMethod and (options.MaxBuffs ~= DEFAULT_MAXBUFFS or options.MaxDebuffs ~= DEFAULT_MAXDEBUFFS) then
+			-- manage max buffs / debuffs changed, safer but experimental
+			hooksecurefunc("CompactUnitFrame_UpdateAuras", ns.CompactUnitFrame_UpdateAurasInternal)
+		end
+
+		-- Register combat end event, callback out of combat
+		local frame = CreateFrame("Frame")
+		frame:RegisterEvent("PLAYER_REGEN_ENABLED")
+		frame:SetScript("OnEvent", function(self, event)
+			if event == "PLAYER_REGEN_ENABLED" then
+				ns.OnCombatEnd()
+			end
+		end)
     end
 end
 
@@ -160,7 +297,7 @@ module:SetGetInfo(getInfo);
 --[[
 Hooks:
 CompactUnitFrame_SetMaxBuffs si pas de repositionnement
-CompactUnitFrame_UpdateAll si repositionnement (multiligne, etc...)
+DefaultCompactUnitFrameSetup si repositionnement (multiligne, etc...)
 -- hooksecurefunc(options.DispelDebuffsPerLine < options.MaxDispelDebuffs and "CompactUnitFrame_UpdateAll" or "CompactUnitFrame_SetMaxDispelDebuffs", ns.Hook_ManageDispelDebuffs);
 
 /dump KallyeRaidFramesOptions.MaxBuffs
