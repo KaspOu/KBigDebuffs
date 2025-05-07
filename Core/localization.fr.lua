@@ -23,6 +23,7 @@ l.MSG_LOADED         = format("%s lanc\195\169 et actif", l.VERS_TITLE);
 l.INIT_FAILED = format("%s pas charg\195\169 correctement (conflit ?) !", l.VERS_TITLE);
 
 local required = l.YL.."*";
+-- KBD START
 l.OPTION_BUFFS_HEADER = "Buffs / Debuffs"
 l.OPTION_ORIENTATION_LeftThenUp = "\195\128 Gauche, puis en Haut"
 l.OPTION_ORIENTATION_LeftThenUp_Default = l.DEFAULT.."\195\128 Gauche, puis en Haut (par d\195\169faut)"
@@ -40,10 +41,10 @@ l.OPTION_BUFFSPERLINE_TOOLTIP = "Nombre de buffs par ligne\n"..l.CY.."Ignor\195\
 l.OPTION_BUFFSPERLINE_FORMAT = "%d par ligne";
 l.OPTION_BUFFSORIENTATION = "Orientation des buffs"..required;
 l.OPTION_BUFFSORIENTATION_TOOLTIP = "Choisissez l\'arrangement des buffs (supporte le multiligne)\n"..l.CY.."Par d\195\169faut : "..l.OPTION_ORIENTATION_LeftThenUp
-l.OPTION_BUFFS_RELATIVE_X = "D\195\169calage horizontal"..required;
-l.OPTION_BUFFS_RELATIVE_X_TOOLTIP = "Ajustez horizontalement la position initiale des buffs";
-l.OPTION_BUFFS_RELATIVE_Y = "D\195\169calage vertical"..required;
-l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "Ajustez verticalement la position initiale des buffs";
+l.OPTION_BUFFS_RELATIVE_X = "Position horizontale"..required;
+l.OPTION_BUFFS_RELATIVE_X_TOOLTIP = "Ajustez la position horizontale relative des buffs";
+l.OPTION_BUFFS_RELATIVE_Y = "Position verticale"..required;
+l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "Ajustez la position verticale relative des buffs";
 l.OPTION_DEBUFFSSCALE = "Taille des d\195\169buffs "..required;
 l.OPTION_DEBUFFSSCALE_TOOLTIP = l.CY.."Par d\195\169faut dans Wow : 1"
 l.OPTION_MAXDEBUFFS = "Limite de d\195\169buffs"..required;
@@ -54,15 +55,16 @@ l.OPTION_DEBUFFSPERLINE_TOOLTIP = "Nombre d'ic\195\180nes de d\195\169buff par l
 l.OPTION_DEBUFFSPERLINE_FORMAT = "%d par ligne";
 l.OPTION_DEBUFFSORIENTATION = "Orientation des d\195\169buffs"..required;
 l.OPTION_DEBUFFSORIENTATION_TOOLTIP = "Choisissez l\'arrangement des d\195\169buffs (supporte le multiligne)\n"..l.CY.."Par d\195\169faut : "..l.OPTION_ORIENTATION_RightThenUp;
-l.OPTION_DEBUFFS_RELATIVE_X = "D\195\169calage horizontal"..required;
-l.OPTION_DEBUFFS_RELATIVE_X_TOOLTIP = "Ajustez horizontalement la position initiale des d\195\169buffs";
-l.OPTION_DEBUFFS_RELATIVE_Y = "D\195\169calage vertical"..required;
-l.OPTION_DEBUFFS_RELATIVE_Y_TOOLTIP = "Ajustez verticalement la position initiale des d\195\169buffs";
+l.OPTION_DEBUFFS_RELATIVE_X = "Position horizontale"..required;
+l.OPTION_DEBUFFS_RELATIVE_X_TOOLTIP = "Ajustez la position horizontale relative des d\195\169buffs";
+l.OPTION_DEBUFFS_RELATIVE_Y = "Position verticale"..required;
+l.OPTION_DEBUFFS_RELATIVE_Y_TOOLTIP = "Ajustez la position verticale relative des d\195\169buffs";
 l.OPTION_USETAINTMETHOD = l.CY.."Affichage classique de la Limite de buffs / d\195\169buffs"..required.." "..l.ALERT
 l.OPTION_USETAINTMETHOD_TOOLTIP = "D\195\169coch\195\169, utilise l'affichage exp\195\169rimental\nCoch\195\169, utilise l'affichage stable, mais avec une "..l.RDL.."erreur par session|r, pas si grave..."
 l.OPTION_BUFFS_TAINTWARNING = l.ALERT.." Changer la Limite provoque une "..l.RDL.."erreur par session|r, pas si grave..."
 l.OPTION_BUFFS_FLICKERWARNING = l.INFO.." Le repositionnement peut \195\170tre affect\195\169 quelques secondes \195\160 la mort d'un boss"
 l.OPTION_BUFFS_RESET = "Annuler tout repositionnement"
+-- KBD END
 
 l.OPTION_RESET_OPTIONS = "R\195\169initialiser le profil";
 l.OPTION_RELOAD_REQUIRED = "Certains changements n\195\169cessitent un rechargement (\195\169crivez : "..l.YL.."/reload|r )";
