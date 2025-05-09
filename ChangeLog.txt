@@ -1,3 +1,6 @@
+v11.1.503
+- Russian localization (thanks to ZamestoTV)
+
 v11.1.502
 - Fixed error in Wow: new code for max buffs
 - Buffs UI: Max buffs option to use legacy code (with warning)
