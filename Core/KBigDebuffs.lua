@@ -14,17 +14,34 @@ local defaultOptions = {
 	BuffsScale = 0.75,
 	MaxBuffs = CompactUnitFrame_GetOptionDisplayOnlyDispellableDebuffs and 8 or ns.DEFAULT_MAXBUFFS,
 	BuffsPerLine = 4,
-	BuffsVertical = false,
+	BuffsOrientation = "LeftThenUp",
+	BuffsPosX = 0,
+	BuffsPosY = 0,
 	DebuffsScale = 1.25,
 	MaxDebuffs = ns.DEFAULT_MAXBUFFS,
-	DebuffsPerLine = 9,
-	DebuffsVertical = false,
+	DebuffsPerLine = ns.DEFAULT_MAXBUFFS,
+	DebuffsOrientation = "RightThenUp",
+	DebuffsPosX = 0,
+	DebuffsPosY = 0,
 	UseTaintMethod = false,
 
 	ShowMsgNormal = true,
 	ShowMsgWarning = true,
 	ShowMsgError = false,
 };
+
+
+function ns.RemoveOldOptions(options)
+	-- Since 11.1.501
+	if  options.BuffsVertical ~= nil then
+		options.BuffsOrientation = options.BuffsVertical and "UpThenLeft" or options.BuffsOrientation
+		options.BuffsVertical = nil
+	end
+	if  options.DebuffsVertical ~= nil then
+		options.DebuffsOrientation = options.DebuffsVertical and "UpThenRight" or options.DebuffsOrientation
+		options.DebuffsVertical = nil
+	end
+end
 
 local function SLASH_command(msgIn)
 	if (not isLoaded) then
@@ -95,7 +112,7 @@ StaticPopupDialogs[ns.ADDON_NAME.."_CONFIRM_RESET"] = {
 	button1 = ALL_SETTINGS,
 	-- button3 = CURRENT_SETTINGS,
 	button2 = CANCEL,
-	OnAccept = function()										
+	OnAccept = function()
 		ns.SetDefaultOptions(defaultOptions, true);
 		ReloadUI();
 	end,
@@ -110,6 +127,11 @@ StaticPopupDialogs[ns.ADDON_NAME.."_CONFIRM_RESET"] = {
 function KBDUI.ConfirmReset()
 	StaticPopup_Show(ns.ADDON_NAME.."_CONFIRM_RESET")
 end
+
+function KBDUI.ResetOptions(optionNamesToReset, optionsToForce)
+	ns.ResetOptions(optionNamesToReset, defaultOptions, optionsToForce)
+end
+
 function KBDUI.ShowEditMode(window)
 	ns.ShowEditMode(window);
 end
