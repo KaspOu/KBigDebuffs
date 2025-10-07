@@ -9,7 +9,7 @@
 ## IconTexture: Interface\AddOns\KBigDebuffs\Logo32
 
 ## X-Category: Unit Frames, Interface Enhancements
-## X-Localizations: enUS, frFR, ruRU
+## X-Localizations: enUS, frFR, ruRU, esES
 ## X-License: MIT
 ## X-Website: https://github.com/KaspOu/KBigDebuffs/
 ## X-Curse-Project-ID: 1026841
