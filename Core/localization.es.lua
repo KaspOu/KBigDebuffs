@@ -1,7 +1,6 @@
 -------------------------------------------------------------------------------
 -- Spanish localization (ChatGPT)
 -------------------------------------------------------------------------------
-
 if (GetLocale() ~= "esES" and GetLocale() ~= "esMX") then return end
 local _, ns = ...
 local l = ns.I18N;
@@ -32,37 +31,37 @@ l.OPTION_ORIENTATION_UpThenLeft = "Arriba, luego a la izquierda"
 l.OPTION_ORIENTATION_RightThenUp = "A la derecha, luego arriba"
 l.OPTION_ORIENTATION_RightThenUp_Default = l.DEFAULT.."A la derecha, luego arriba (por defecto)"
 l.OPTION_ORIENTATION_UpThenRight = "Arriba, luego a la derecha"
-l.OPTION_BUFFSSCALE = "Tamaño de beneficios "..required;
+l.OPTION_BUFFSSCALE = "Tama\195\177o de beneficios "..required;
 l.OPTION_BUFFSSCALE_TOOLTIP = l.CY.."Por defecto en Wow: 1"
-l.OPTION_MAXBUFFS = "Límite de beneficios"..required;
-l.OPTION_MAXBUFFS_TOOLTIP = "Número máximo de beneficios a mostrar\n"..l.CY.."Por defecto en Wow: "..ns.DEFAULT_MAXBUFFS;
+l.OPTION_MAXBUFFS = "L\195\173mite de beneficios"..required;
+l.OPTION_MAXBUFFS_TOOLTIP = "N\195\186mero m\195\161ximo de beneficios a mostrar\n"..l.CY.."Por defecto en Wow: "..ns.DEFAULT_MAXBUFFS;
 l.OPTION_MAXBUFFS_FORMAT = "%d |4beneficio:beneficios";
-l.OPTION_BUFFSPERLINE = "Beneficios por línea"..required;
-l.OPTION_BUFFSPERLINE_TOOLTIP = "Número de beneficios por línea\n"..l.CY.."Ignorado si es superior al Límite";
-l.OPTION_BUFFSPERLINE_FORMAT = "%d por línea";
-l.OPTION_BUFFSORIENTATION = "Orientación de beneficios"..required;
-l.OPTION_BUFFSORIENTATION_TOOLTIP = "Elige la disposición de los beneficios (soporta múltiples líneas)\n"..l.CY.."Por defecto: "..l.OPTION_ORIENTATION_LeftThenUp
-l.OPTION_BUFFS_RELATIVE_X = "Posición horizontal"..required;
-l.OPTION_BUFFS_RELATIVE_X_TOOLTIP = "Ajusta la posición horizontal relativa de los beneficios";
-l.OPTION_BUFFS_RELATIVE_Y = "Posición vertical"..required;
-l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "Ajusta la posición vertical relativa de los beneficios";
-l.OPTION_DEBUFFSSCALE = "Tamaño de perjuicios "..required;
+l.OPTION_BUFFSPERLINE = "Beneficios por l\195\177nea"..required;
+l.OPTION_BUFFSPERLINE_TOOLTIP = "N\195\186mero de beneficios por l\195\177nea\n"..l.CY.."Ignorado si es superior al L\195\173mite";
+l.OPTION_BUFFSPERLINE_FORMAT = "%d por l\195\177nea";
+l.OPTION_BUFFSORIENTATION = "Orientaci\195\179n de beneficios"..required;
+l.OPTION_BUFFSORIENTATION_TOOLTIP = "Elige la disposici\195\179n de los beneficios (soporta m\195\186ltiples l\195\177neas)\n"..l.CY.."Por defecto: "..l.OPTION_ORIENTATION_LeftThenUp
+l.OPTION_BUFFS_RELATIVE_X = "Posici\195\179n horizontal"..required;
+l.OPTION_BUFFS_RELATIVE_X_TOOLTIP = "Ajusta la posici\195\179n horizontal relativa de los beneficios";
+l.OPTION_BUFFS_RELATIVE_Y = "Posici\195\179n vertical"..required;
+l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "Ajusta la posici\195\179n vertical relativa de los beneficios";
+l.OPTION_DEBUFFSSCALE = "Tama\195\177o de perjuicios "..required;
 l.OPTION_DEBUFFSSCALE_TOOLTIP = l.CY.."Por defecto en Wow: 1"
-l.OPTION_MAXDEBUFFS = "Límite de perjuicios"..required;
-l.OPTION_MAXDEBUFFS_TOOLTIP = "Número máximo de perjuicios a mostrar\n"..l.CY.."Por defecto en Wow: "..ns.DEFAULT_MAXBUFFS;
+l.OPTION_MAXDEBUFFS = "L\195\173mite de perjuicios"..required;
+l.OPTION_MAXDEBUFFS_TOOLTIP = "N\195\186mero m\195\161ximo de perjuicios a mostrar\n"..l.CY.."Por defecto en Wow: "..ns.DEFAULT_MAXBUFFS;
 l.OPTION_MAXDEBUFFS_FORMAT = "%d |4perjuicio:perjuicios";
-l.OPTION_DEBUFFSPERLINE = "Perjuicios por línea"..required;
-l.OPTION_DEBUFFSPERLINE_TOOLTIP = "Número de iconos de perjuicio por línea\n"..l.CY.."Ignorado si es superior al Límite";
-l.OPTION_DEBUFFSPERLINE_FORMAT = "%d por línea";
-l.OPTION_DEBUFFSORIENTATION = "Orientación de perjuicios"..required;
-l.OPTION_DEBUFFSORIENTATION_TOOLTIP = "Elige la disposición de los perjuicios (soporta múltiples líneas)\n"..l.CY.."Por defecto: "..l.OPTION_ORIENTATION_RightThenUp;
-l.OPTION_DEBUFFS_RELATIVE_X = "Posición horizontal"..required;
-l.OPTION_DEBUFFS_RELATIVE_X_TOOLTIP = "Ajusta la posición horizontal relativa de los perjuicios";
-l.OPTION_DEBUFFS_RELATIVE_Y = "Posición vertical"..required;
-l.OPTION_DEBUFFS_RELATIVE_Y_TOOLTIP = "Ajusta la posición vertical relativa de los perjuicios";
-l.OPTION_USETAINTMETHOD = l.CY.."Visualización clásica del Límite de beneficios / perjuicios"..required.." "..l.ALERT
-l.OPTION_USETAINTMETHOD_TOOLTIP = "Desmarcado, usa la visualización experimental\nMarcado, usa la visualización estable, pero con un "..l.RDL.."error por sesión|r, no tan grave..."
-l.OPTION_BUFFS_TAINTWARNING = l.ALERT.." Cambiar el Límite provoca un "..l.RDL.."error por sesión|r, no tan grave..."
+l.OPTION_DEBUFFSPERLINE = "Perjuicios por l\195\177nea"..required;
+l.OPTION_DEBUFFSPERLINE_TOOLTIP = "N\195\186mero de iconos de perjuicio por l\195\177nea\n"..l.CY.."Ignorado si es superior al L\195\173mite";
+l.OPTION_DEBUFFSPERLINE_FORMAT = "%d por l\195\177nea";
+l.OPTION_DEBUFFSORIENTATION = "Orientaci\195\179n de perjuicios"..required;
+l.OPTION_DEBUFFSORIENTATION_TOOLTIP = "Elige la disposici\195\179n de los perjuicios (soporta m\195\186ltiples l\195\177neas)\n"..l.CY.."Por defecto: "..l.OPTION_ORIENTATION_RightThenUp;
+l.OPTION_DEBUFFS_RELATIVE_X = "Posici\195\179n horizontal"..required;
+l.OPTION_DEBUFFS_RELATIVE_X_TOOLTIP = "Ajusta la posici\195\179n horizontal relativa de los perjuicios";
+l.OPTION_DEBUFFS_RELATIVE_Y = "Posici\195\179n vertical"..required;
+l.OPTION_DEBUFFS_RELATIVE_Y_TOOLTIP = "Ajusta la posici\195\179n vertical relativa de los perjuicios";
+l.OPTION_USETAINTMETHOD = l.CY.."Visualizaci\195\179n cl\195\161sica del L\195\173mite de beneficios / perjuicios"..required.." "..l.ALERT
+l.OPTION_USETAINTMETHOD_TOOLTIP = "Desmarcado, usa la visualizaci\195\179n experimental\nMarcado, usa la visualizaci\195\179n estable, pero con un "..l.RDL.."error por sesi\195\179n|r, no tan grave..."
+l.OPTION_BUFFS_TAINTWARNING = l.ALERT.." Cambiar el L\195\173mite provoca un "..l.RDL.."error por sesi\195\179n|r, no tan grave..."
 l.OPTION_BUFFS_FLICKERWARNING = l.INFO.." El reposicionamiento puede verse afectado unos segundos al morir un jefe"
 l.OPTION_BUFFS_RESET = "Cancelar todo reposicionamiento"
 -- KBD END
