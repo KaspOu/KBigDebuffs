@@ -8,9 +8,10 @@
 ## Notes-esMX: Redimensiona beneficios y perjuicios. Modifica el límite máximo. Modifica la alineación.
 ## Notes-itIT: Ridimensiona buff e debuff. Modifica il limite massimo. Modifica l'allineamento.
 ## Notes-koKR: 버프/디버프 크기 조정. 최대 제한 변경. 정렬 변경.
+## Notes-ptBR: Redimensiona búfes e debufes. Modifica o limite máximo. Modifica o alinhamento.
 ## Notes-ruRU: Изменение размера баффов и дебаффов. Изменение максимального лимита. Изменение выравнивания.
 ## Notes-zhCN: 调整增益/减益大小。修改最大限制。修改对齐方式。
-## Notes-zhTW: 調整增益/減益大小。修改最大限制。修改對齊方式。
+## Notes-zhTW: 調整增益/减益大小。修改最大限制。修改对齐方式。
 
 ## Version: 11.2.501
 ## Author: Kallye of Elune
@@ -18,7 +19,7 @@
 ## IconTexture: Interface\AddOns\KBigDebuffs\Logo32
 
 ## X-Category: Unit Frames, Interface Enhancements
-## X-Localizations: enUS, frFR, ruRU, deDE, esES, esMX, itIT, koKR, zhCN, zhTW
+## X-Localizations: enUS, frFR, ruRU, deDE, esES, esMX, itIT, koKR, ptBR, zhCN, zhTW
 ## X-License: MIT
 ## X-Website: https://github.com/KaspOu/KBigDebuffs/
 ## X-Curse-Project-ID: 1026841
