@@ -1,4 +1,4 @@
-## Interface: 120000, 110200, 110205, 50500, 50501, 11507
+## Interface: 120000, 110205, 50501, 11508
 ## Title: |cff00ff00K|r Big Debuffs
 ## Title-frFR: |cff00ff00K|r Big Debuffs
 ## Notes: Resize buffs & debuffs. Modify max limit. Modify alignment.
@@ -13,8 +13,9 @@
 ## Notes-zhCN: 调整增益/减益大小。修改最大限制。修改对齐方式。
 ## Notes-zhTW: 調整增益/减益大小。修改最大限制。修改对齐方式。
 
-## Version: 11.2.502
+## Version: 11.2.503
 ## Author: Kallye of Elune
+## LoadSavedVariablesFirst: 1
 ## SavedVariables: KBigDebuffsOptions
 ## IconTexture: Interface\AddOns\KBigDebuffs\Logo32
 
@@ -25,7 +26,15 @@
 ## X-Curse-Project-ID: 1026841
 
 Core\KBigDebuffs.globals.lua
-Core\locales.xml
+Core\localization.en.lua
+Core\localization.fr.lua [AllowLoadTextLocale frFR]
+Core\localization.de.lua [AllowLoadTextLocale deDE]
+Core\localization.es.lua [AllowLoadTextLocale esES, esMX]
+Core\localization.it.lua [AllowLoadTextLocale itIT]
+Core\localization.ko.lua [AllowLoadTextLocale koKR]
+Core\localization.pt.lua [AllowLoadTextLocale ptBR]
+Core\localization.ru.lua [AllowLoadTextLocale ruRU]
+Core\localization.zh.lua [AllowLoadTextLocale zhCN, zhTW]
 Shared\WidgetsKBD.xml
 Modules\modules.xml
 Core\KBigDebuffs.xml
