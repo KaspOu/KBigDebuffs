@@ -1,4 +1,4 @@
-## Interface: 120000, 110205, 110207, 50501, 50502, 38000, 20505, 11508
+## Interface: 120000, 120001, 110205, 110207, 50501, 50502, 38000, 20505, 11508
 ## Title: |cff00ff00K|r Big Debuffs
 ## Title-frFR: |cff00ff00K|r Big Debuffs
 ## Notes: Resize buffs & debuffs. Modify max limit. Modify alignment.
@@ -13,7 +13,7 @@
 ## Notes-zhCN: 调整增益/减益大小。修改最大限制。修改对齐方式。
 ## Notes-zhTW: 調整增益/减益大小。修改最大限制。修改对齐方式。
 
-## Version: 11.2.702
+## Version: 12.0.001
 ## Author: Kallye of Elune
 ## LoadSavedVariablesFirst: 1
 ## SavedVariables: KBigDebuffsOptions

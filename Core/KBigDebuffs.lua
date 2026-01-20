@@ -53,7 +53,7 @@ local function SLASH_command(msgIn)
 		StaticPopup_Show(ns.ADDON_NAME.."_CONFIRM_RESET")
 	else
 		if Settings then
-			Settings.OpenToCategory(ns.TITLE);
+			Settings.OpenToCategory(ns.CATEGORY_ID);
 		else
 			InterfaceOptionsFrame_OpenToCategory(ns.TITLE);
 		end
@@ -171,7 +171,8 @@ function ns.InterfaceOptions_AddCategory(frame, addOn, position)
         return subcategory, category;
     else
         local category, layout = Settings.RegisterCanvasLayoutCategory(frame, frame.name, frame.name);
-        category.ID = frame.name;
+        -- category.ID = frame.name;
+		ns.CATEGORY_ID = category:GetID()
         Settings.RegisterAddOnCategory(category);
         return category;
     end
