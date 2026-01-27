@@ -21,7 +21,7 @@
 
 ## X-Category: Unit Frames, Interface Enhancements
 ## X-Localizations: enUS, frFR, ruRU, deDE, esES, esMX, itIT, koKR, ptBR, zhCN, zhTW
-## X-License: MIT
+## X-License: All Rights Reserved
 ## X-Website: https://github.com/KaspOu/KBigDebuffs/
 ## X-Curse-Project-ID: 1026841
 

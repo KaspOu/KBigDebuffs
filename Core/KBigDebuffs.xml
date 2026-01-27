@@ -29,7 +29,7 @@
 					</OnEnter>
 				</Scripts>
 			</Button>
-			<ScrollFrame name="KBDUI_OptionsScrollFrame" inherits="ScrollFrameTemplate" Framelevel="0" enablemouse="true" setAllPoints="true">				
+			<ScrollFrame name="KBDUI_OptionsScrollFrame" inherits="ScrollFrameTemplate" Framelevel="0" enablemouse="true" setAllPoints="true">
 				<KeyValues>
 					<KeyValue key="scrollBarHideIfUnscrollable" value="true" type="boolean"/>
 					<KeyValue key="scrollBarX" value="KBDUI.scrollBarX" type="global"/>
@@ -57,7 +57,7 @@
 						<Frames>
 							<!-- -->
 							<Frame parentKey="Options1" inherits="KBDOptionsUnitDebuffs">
-								<Anchors>									
+								<Anchors>
 									<Anchor point="TOP" relativeTo="$parent"><Offset x="0" y="0"/></Anchor>
 								</Anchors>
 							</Frame>
