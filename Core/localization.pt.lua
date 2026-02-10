@@ -24,7 +24,7 @@ l.INIT_FAILED = format("%s n\195\163o carregado corretamente (conflito ?) !", l.
 
 local required = l.YL.."*";
 -- KBD START
-l.OPTION_BUFFS_HEADER = "B\195\186fes / Debufes"
+l.OPTION_BUFFS_HEADER = "Debufes / B\195\186fes"
 l.OPTION_ORIENTATION_LeftThenUp = "\195\128 Esquerda, depois para Cima"
 l.OPTION_ORIENTATION_LeftThenUp_Default = l.DEFAULT.."\195\128 Esquerda, depois para Cima (padr\195\163o)"
 l.OPTION_ORIENTATION_UpThenLeft = "Para Cima, depois \195\128 Esquerda"
@@ -48,7 +48,7 @@ l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "Ajuste a posi\195\167\195\163o vertical rel
 l.OPTION_DEBUFFSSCALE = "Tamanho dos debufes "..required;
 l.OPTION_DEBUFFSSCALE_TOOLTIP = l.CY.."Padr\195\163o no Wow: 1"
 l.OPTION_MAXDEBUFFS = "Limite de debufes"..required;
-l.OPTION_MAXDEBUFFS_TOOLTIP = "N\195\186mero m\195\161ximo de debufes a exibir\n"..l.CY.."Padr\195\163o no Wow: "..ns.DEFAULT_MAXBUFFS;
+l.OPTION_MAXDEBUFFS_TOOLTIP = "N\195\186mero m\195\161ximo de debufes a exibir\n"..l.CY.."Padr\195\163o no Wow: "..ns.DEFAULT_MAXDEBUFFS;
 l.OPTION_MAXDEBUFFS_FORMAT = "%d |4debufe:debufes";
 l.OPTION_DEBUFFSPERLINE = "Debufes por linha"..required;
 l.OPTION_DEBUFFSPERLINE_TOOLTIP = "N\195\186mero de \195\174cones de debufe por linha\n"..l.CY.."Ignorado se superior ao Limite";

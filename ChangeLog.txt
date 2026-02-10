@@ -1,3 +1,28 @@
+v12.0.101
+- Midnight 12.0.1
+- Debuffs on the left & buffs on the right, as expected
+- Default Midnight Buffs limits = 6
+
+v12.0.004
+- Toc updated
+
+v12.0.003
+- Sliders fixed (Anniversary)
+
+v12.0.002
+- Midnight: Fix buffs / debuffs
+- Isolated and Modulable Code
+
+v12.0.001
+- Midnight: hotfix
+
+v11.2.702
+- Classic Anniversary
+
+v11.2.701
+- TWW 11.2.7
+- Wotlk China
+
 v11.2.503
 - Classic 1.15.8
 

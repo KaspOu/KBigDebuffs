@@ -24,7 +24,7 @@ l.INIT_FAILED = format("%s non si \195\170 inizializzato correttamente (conflitt
 
 local required = l.YL.."*";
 -- KBD START
-l.OPTION_BUFFS_HEADER = "Buff / Debuff"
+l.OPTION_BUFFS_HEADER = "Debuff / Buff"
 l.OPTION_ORIENTATION_LeftThenUp = "A Sinistra, poi in Alto"
 l.OPTION_ORIENTATION_LeftThenUp_Default = l.DEFAULT.."A Sinistra, poi in Alto (predefinito)"
 l.OPTION_ORIENTATION_UpThenLeft = "In Alto, poi a Sinistra"
@@ -48,7 +48,7 @@ l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "Regola la posizione verticale relativa dei 
 l.OPTION_DEBUFFSSCALE = "Dimensione dei debuff "..required;
 l.OPTION_DEBUFFSSCALE_TOOLTIP = l.CY.."Per impostazione predefinita in Wow: 1"
 l.OPTION_MAXDEBUFFS = "Limite di debuff"..required;
-l.OPTION_MAXDEBUFFS_TOOLTIP = "Numero massimo di debuff da visualizzare\n"..l.CY.."Per impostazione predefinita in Wow: "..ns.DEFAULT_MAXBUFFS;
+l.OPTION_MAXDEBUFFS_TOOLTIP = "Numero massimo di debuff da visualizzare\n"..l.CY.."Per impostazione predefinita in Wow: "..ns.DEFAULT_MAXDEBUFFS;
 l.OPTION_MAXDEBUFFS_FORMAT = "%d |4debuff:debuffs";
 l.OPTION_DEBUFFSPERLINE = "Debuff per riga"..required;
 l.OPTION_DEBUFFSPERLINE_TOOLTIP = "Numero di icone di debuff per riga\n"..l.CY.."Ignorato se superiore al Limite";

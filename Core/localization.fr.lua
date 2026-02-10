@@ -24,7 +24,7 @@ l.INIT_FAILED = format("%s pas charg\195\169 correctement (conflit ?) !", l.VERS
 
 local required = l.YL.."*";
 -- KBD START
-l.OPTION_BUFFS_HEADER = "Buffs / Debuffs"
+l.OPTION_BUFFS_HEADER = "Debuffs / Buffs"
 l.OPTION_ORIENTATION_LeftThenUp = "\195\128 Gauche, puis en Haut"
 l.OPTION_ORIENTATION_LeftThenUp_Default = l.DEFAULT.."\195\128 Gauche, puis en Haut (par d\195\169faut)"
 l.OPTION_ORIENTATION_UpThenLeft = "En Haut, puis \195\160 Gauche"
@@ -48,7 +48,7 @@ l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "Ajustez la position verticale relative des 
 l.OPTION_DEBUFFSSCALE = "Taille des d\195\169buffs"..required;
 l.OPTION_DEBUFFSSCALE_TOOLTIP = l.CY.."Par d\195\169faut dans Wow : 1"
 l.OPTION_MAXDEBUFFS = "Limite de d\195\169buffs"..required;
-l.OPTION_MAXDEBUFFS_TOOLTIP = "Nombre maximum de d\195\169buffs \195\160 afficher\n"..l.CY.."Par d\195\169faut dans Wow : "..ns.DEFAULT_MAXBUFFS;
+l.OPTION_MAXDEBUFFS_TOOLTIP = "Nombre maximum de d\195\169buffs \195\160 afficher\n"..l.CY.."Par d\195\169faut dans Wow : "..ns.DEFAULT_MAXDEBUFFS;
 l.OPTION_MAXDEBUFFS_FORMAT = "%d |4d\195\169buff:d\195\169buffs";
 l.OPTION_DEBUFFSPERLINE = "D\195\169buffs par ligne"..required;
 l.OPTION_DEBUFFSPERLINE_TOOLTIP = "Nombre d'ic\195\180nes de d\195\169buff par ligne\n"..l.CY.."Ignor\195\169 si sup\195\169rieur \195\160 la Limite";

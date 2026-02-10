@@ -24,7 +24,7 @@ l.INIT_FAILED = format("%s 未正确加载 (冲突?) !", l.VERS_TITLE);
 
 local required = l.YL.."*";
 -- KBD START
-l.OPTION_BUFFS_HEADER = "增益 / 减益"
+l.OPTION_BUFFS_HEADER = "减益 / 增益"
 l.OPTION_ORIENTATION_LeftThenUp = "左侧，然后向上"
 l.OPTION_ORIENTATION_LeftThenUp_Default = l.DEFAULT.."左侧，然后向上 (默认)"
 l.OPTION_ORIENTATION_UpThenLeft = "向上，然后向左"
@@ -48,7 +48,7 @@ l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "调整增益的相对垂直位置";
 l.OPTION_DEBUFFSSCALE = "减益图标大小"..required;
 l.OPTION_DEBUFFSSCALE_TOOLTIP = l.CY.."魔兽世界默认：1"
 l.OPTION_MAXDEBUFFS = "减益上限"..required;
-l.OPTION_MAXDEBUFFS_TOOLTIP = "最大显示减益数量\n"..l.CY.."魔兽世界默认："..ns.DEFAULT_MAXBUFFS;
+l.OPTION_MAXDEBUFFS_TOOLTIP = "最大显示减益数量\n"..l.CY.."魔兽世界默认："..ns.DEFAULT_MAXDEBUFFS;
 l.OPTION_MAXDEBUFFS_FORMAT = "%d |4减益:减益";
 l.OPTION_DEBUFFSPERLINE = "每行减益数量"..required;
 l.OPTION_DEBUFFSPERLINE_TOOLTIP = "每行减益图标数量\n"..l.CY.."如果超过上限则忽略";
