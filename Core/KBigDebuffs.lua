@@ -68,6 +68,11 @@ local function OnEvent(self, event, ...)
 	local arg1 = select(1, ...);
 	if (event == "ADDON_LOADED" and arg1 == ns.ADDON_NAME) then
 		self:UnregisterEvent("ADDON_LOADED");
+		if (issecretvalue ~= nil) then
+			ns.AddMsgErr("disabled temporarly for Midnight (rework required)");
+			l.INIT_FAILED = format("%s disabled temporarly for Midnight (rework required)", ns.TITLE)
+			return
+		end
 		isLoaded = true;
 
 		ns.SetDefaultOptions(defaultOptions);

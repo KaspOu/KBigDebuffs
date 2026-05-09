@@ -1,3 +1,6 @@
+v12.0.502
+- Disabled for Midnight 12.0.5: rework needed (thanks Blizzard...)
+
 v12.0.101
 - Midnight 12.0.1
 - Debuffs on the left & buffs on the right, as expected
