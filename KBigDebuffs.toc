@@ -35,7 +35,7 @@ Core\localization.ko.lua [AllowLoadTextLocale koKR]
 Core\localization.pt.lua [AllowLoadTextLocale ptBR]
 Core\localization.ru.lua [AllowLoadTextLocale ruRU]
 Core\localization.zh.lua [AllowLoadTextLocale zhCN, zhTW]
-Shared\WidgetsKBD.xml
 Modules\RaidFrameAuras\RaidFrameAuras.xml [AllowLoadGameType mainline]
+Shared\WidgetsKBD.xml
 Modules\modules.xml
 Core\KBigDebuffs.xml

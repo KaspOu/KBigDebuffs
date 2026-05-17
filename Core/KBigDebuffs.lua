@@ -69,7 +69,9 @@ end
 local function OnEvent(self, event, ...)
 	local arg1 = select(1, ...);
 	if (event == "ADDON_LOADED" and arg1 == ns.ADDON_NAME) then
-		self:UnregisterEvent("ADDON_LOADED");
+		if C_AddOns.GetAddOnInfo("RaidFrameAuras") == nil then
+			self:UnregisterEvent("ADDON_LOADED");
+		end
 		isLoaded = true;
 
 		ns.SetDefaultOptions(defaultOptions);
@@ -78,6 +80,14 @@ local function OnEvent(self, event, ...)
 		-- Load Module (standalone addon)
 
 		ns.MODULES[1]:Init(_G[ns.OPTIONS_NAME]);
+	end
+	if (event == "ADDON_LOADED" and arg1 == "RaidFrameAuras") then
+		self:UnregisterEvent("ADDON_LOADED");
+		isLoaded = false;
+		ns.CONFLICT_RFA = true
+		ns.LoadRaidFramesAuras = nil
+		ns.CONFLICT, ns.CONFLICT_WITH = true, "RaidFrameAuras"
+		ns.AddMsgErr(format("Conflict with %s", ns.CONFLICT_WITH));
 	end
 end
 
