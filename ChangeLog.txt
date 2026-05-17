@@ -1,5 +1,8 @@
+v12.0.503
+- Buffs & Debuffs back: thanks to *Raid Frame Auras* by Anahkas
+
 v12.0.502
-- Disabled for Midnight 12.0.5: rework needed (thanks Blizzard...)
+- Disabled for Midnight 12.0.5: rework needed
 
 v12.0.101
 - Midnight 12.0.1

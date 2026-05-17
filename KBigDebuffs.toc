@@ -1,4 +1,4 @@
-## Interface: 120001, 50503, 38000, 20505, 11508
+## Interface: 120005, 50503, 38000, 20505, 11508
 ## Title: |cff00ff00K|r Big Debuffs
 ## Title-frFR: |cff00ff00K|r Big Debuffs
 ## Notes: Resize buffs & debuffs. Modify max limit. Modify alignment.
@@ -13,7 +13,7 @@
 ## Notes-zhCN: 调整增益/减益大小。修改最大限制。修改对齐方式。
 ## Notes-zhTW: 調整增益/减益大小。修改最大限制。修改对齐方式。
 
-## Version: 12.0.502
+## Version: 12.0.503
 ## Author: Kallye of Elune
 ## LoadSavedVariablesFirst: 1
 ## SavedVariables: KBigDebuffsOptions
@@ -21,7 +21,7 @@
 
 ## X-Category: Unit Frames, Interface Enhancements
 ## X-Localizations: enUS, frFR, ruRU, deDE, esES, esMX, itIT, koKR, ptBR, zhCN, zhTW
-## X-License: All Rights Reserved
+## X-License: Apache-2.0
 ## X-Website: https://github.com/KaspOu/KBigDebuffs/
 ## X-Curse-Project-ID: 1026841
 
@@ -36,5 +36,6 @@ Core\localization.pt.lua [AllowLoadTextLocale ptBR]
 Core\localization.ru.lua [AllowLoadTextLocale ruRU]
 Core\localization.zh.lua [AllowLoadTextLocale zhCN, zhTW]
 Shared\WidgetsKBD.xml
+Modules\RaidFrameAuras\RaidFrameAuras.xml [AllowLoadGameType mainline]
 Modules\modules.xml
 Core\KBigDebuffs.xml

@@ -1,5 +1,7 @@
 --[[
-	Hello to K Big Raid Debuffs
+	K Big Debuffs
+	Copyright (c) 2024-2026 Kallye of Elune / KaspOu
+	Based on Raid Frame Auras (c) Anahkas - Apache-2.0 - see LICENSE.md
 	Last version: @project-version@ (@project-date-iso@)
 ]]
 
@@ -68,11 +70,6 @@ local function OnEvent(self, event, ...)
 	local arg1 = select(1, ...);
 	if (event == "ADDON_LOADED" and arg1 == ns.ADDON_NAME) then
 		self:UnregisterEvent("ADDON_LOADED");
-		if (issecretvalue ~= nil) then
-			ns.AddMsgErr("disabled temporarly for Midnight (rework required)");
-			l.INIT_FAILED = format("%s disabled temporarly for Midnight (rework required)", ns.TITLE)
-			return
-		end
 		isLoaded = true;
 
 		ns.SetDefaultOptions(defaultOptions);

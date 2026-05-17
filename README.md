@@ -26,5 +26,10 @@ Classic / Mists: One error by session while changing Max (De)buffs setting, expe
 Just after a boss kill, buffs & debuffs positions may flicker (back to Blizzard defaults until out of combat).  
   
   
-https://www.curseforge.com/members/kaspou/projects  
-All rights reserved
+https://www.curseforge.com/members/kaspou/projects
+
+## License
+
+**K Big Debuffs** is licensed under the [Apache License 2.0](LICENSE.md).
+
+Midnight code is based on **Raid Frame Auras** by [Anahkas](https://www.curseforge.com/wow/addons/raid-party-frame-auras) (`Modules/RaidFrameAuras/`).
