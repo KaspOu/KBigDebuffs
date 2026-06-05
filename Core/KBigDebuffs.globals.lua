@@ -18,7 +18,7 @@ ns.TITLE = format("%s|TInterface/PVPFrame/Icons/prestige-icon-8-3:16|t", ns.TITL
 
 ns.IS_RETAIL = (WOW_PROJECT_ID == (WOW_PROJECT_MAINLINE or 1));
 ns.HAS_SECRETS = issecretvalue and true or false;
-ns.DEFAULT_MAXBUFFS = issecretvalue and 9 or 3;
+ns.DEFAULT_MAXBUFFS = ns.IS_RETAIL and 9 or 3;
 ns.DEFAULT_MAXDEBUFFS = 3;
 
 
