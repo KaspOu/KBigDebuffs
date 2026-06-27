@@ -25,6 +25,7 @@ local defaultOptions = {
 	DebuffsOrientation = "RightThenUp",
 	DebuffsPosX = 0,
 	DebuffsPosY = 0,
+	HideBlizzardAuras = true,
 	UseTaintMethod = false,
 
 	ShowMsgNormal = true,
@@ -162,6 +163,7 @@ local function RequiredReloadOptionsString()
 		..tostring(_G[ns.OPTIONS_NAME].MaxDebuffs)
 		..tostring(_G[ns.OPTIONS_NAME].DebuffsPerLine)
 		..tostring(_G[ns.OPTIONS_NAME].DebuffsVertical)
+		..tostring(_G[ns.OPTIONS_NAME].HideBlizzardAuras)
 end
 
 local saveOptions = function()

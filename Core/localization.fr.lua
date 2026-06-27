@@ -63,6 +63,7 @@ l.OPTION_USETAINTMETHOD = l.CY.."Affichage classique de la Limite de buffs / d\1
 l.OPTION_USETAINTMETHOD_TOOLTIP = "D\195\169coch\195\169, utilise l'affichage exp\195\169rimental\nCoch\195\169, utilise l'affichage stable, mais avec une "..l.RDL.."erreur par session|r, pas si grave..."
 l.OPTION_BUFFS_TAINTWARNING = l.ALERT.." Changer la Limite provoque une "..l.RDL.."erreur par session|r, pas si grave..."
 l.OPTION_BUFFS_FLICKERWARNING = l.INFO.." Le repositionnement peut \195\170tre affect\195\169 quelques secondes \195\160 la mort d'un boss"
+l.OPTION_BUFFS_HIDEBLIZZARDAURAS = " Masquer les auras Blizzard"
 l.OPTION_BUFFS_RESET = "Annuler tout repositionnement"
 -- KBD END
 
