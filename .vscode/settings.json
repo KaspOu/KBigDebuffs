@@ -54,7 +54,8 @@
         "CompactUnitFrame_UtilSetDebuff",
         "CompactUnitFrame_UtilSetBuff",
         "CompactUnitFrame_IsAuraInstanceIDBlocked",
-        "BOSS_DEBUFF_SIZE_INCREASE"
+        "BOSS_DEBUFF_SIZE_INCREASE",
+        "tonumber"
     ],
     "cSpell.words": [
         "prepatch"
