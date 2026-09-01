@@ -53,7 +53,7 @@
 				</Anchors>
 				<ScrollChild>
 					<Frame name="KBDUI_OptionsFrame">
-						<Size x="550" y="400" />
+						<Size x="550" y="570" />
 						<Frames>
 							<!-- -->
 							<Frame parentKey="Options1" inherits="KBDOptionsUnitDebuffs">
