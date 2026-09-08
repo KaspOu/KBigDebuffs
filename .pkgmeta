@@ -7,3 +7,6 @@ license-output: License.md
 ignore:
     - .vscode
     - .release*
+    - .git*
+    - .icon*
+    - .logo*
