@@ -1,4 +1,4 @@
-## Interface: 120100, 120105, 50504, 38002, 20506, 11509
+## Interface: 120100, 120105, 16001, 50504, 38002, 20506, 11509
 ## Title: |cff00ff00K|r Big Debuffs
 ## Title-frFR: |cff00ff00K|r Big Debuffs
 ## Notes: Resize buffs & debuffs. Modify max limit. Modify alignment.
@@ -35,7 +35,7 @@ Core\localization.ko.lua [AllowLoadTextLocale koKR]
 Core\localization.pt.lua [AllowLoadTextLocale ptBR]
 Core\localization.ru.lua [AllowLoadTextLocale ruRU]
 Core\localization.zh.lua [AllowLoadTextLocale zhCN, zhTW]
-Modules\RaidFrameAuras\RaidFrameAuras.xml [AllowLoadGameType standard classic]
+Modules\RaidFrameAuras\RaidFrameAuras.xml [AllowLoadGameType classic]
 Shared\WidgetsKBD.xml
 Modules\modules.xml
 Core\KBigDebuffs.xml
