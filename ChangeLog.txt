@@ -1,3 +1,6 @@
+v12.1.004
+- Settings are now applied in real time.
+
 v12.1.003
 - New options (Midnight):
   > Spacing between buffs & debuffs

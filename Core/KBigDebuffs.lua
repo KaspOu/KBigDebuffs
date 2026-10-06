@@ -9,6 +9,7 @@ local _, ns = ...
 local l = ns.I18N;
 local isInit = false;
 local isLoaded = false;
+local RequiredReloadOptionsString; -- defined below
 
 local defaultOptions = {
 	Version = ns.VERSION,
@@ -85,6 +86,7 @@ local function OnEvent(self, event, ...)
 
 		ns.SetDefaultOptions(defaultOptions);
 		ns.RefreshOptions(defaultOptions);
+		ns.BindOptionControls(defaultOptions, RequiredReloadOptionsString);
 
 		-- Load Module (standalone addon)
 
@@ -111,12 +113,15 @@ local function InitAddon(frame)
 		return;
 	end
 
+	SlashCmdList["CLEAR"] = SLASH_CLEAR_command;
+	SLASH_CLEAR1 = "/clear";
+
 	if (isInit or InCombatLockdown()) then return; end
 
 	isInit = true;
 	frame:SetScript("OnEvent",
-		function(self, event, ...)
-			OnEvent(self, event, ...);
+		function(frame, event, ...)
+			OnEvent(frame, event, ...);
 		end
 	);
 	frame:RegisterEvent("ADDON_LOADED");
@@ -162,7 +167,7 @@ local refreshOptions = function()
 end
 
 
-local function RequiredReloadOptionsString()
+function RequiredReloadOptionsString()
 	return tostring(_G[ns.OPTIONS_NAME].BuffsScale)
 		..tostring(_G[ns.OPTIONS_NAME].MaxBuffs)
 		..tostring(_G[ns.OPTIONS_NAME].BuffsPerLine)
@@ -176,9 +181,6 @@ local function RequiredReloadOptionsString()
 		..tostring(_G[ns.OPTIONS_NAME].HideBlizzardAuras)
 end
 
-local saveOptions = function()
-	ns.SaveOptions(defaultOptions, RequiredReloadOptionsString);
-end
 function ns.InterfaceOptions_AddCategory(frame, addOn, position)
 	if not Settings or not Settings.RegisterCanvasLayoutSubcategory then
 		return InterfaceOptions_AddCategory(frame, addOn, position)
@@ -209,7 +211,7 @@ function KBDUI.OptionsContainer_OnLoad(self, scrollFrame, optionsFrame)
 	ns.scrollFrame = scrollFrame;
 	ns.optionsFrame = optionsFrame;
 	self.name = ns.TITLE;
-	self.okay = saveOptions;
+	self.okay = ns.FlushOptionsChanges -- options are already saved in real time
 	self.refresh = refreshOptions;
 	ns.InterfaceOptions_AddCategory(self);
 	if (ns.scrollFrame ~= nil) then
