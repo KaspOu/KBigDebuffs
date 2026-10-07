@@ -169,14 +169,8 @@ end
 
 function RequiredReloadOptionsString()
 	return tostring(_G[ns.OPTIONS_NAME].BuffsScale)
-		..tostring(_G[ns.OPTIONS_NAME].MaxBuffs)
-		..tostring(_G[ns.OPTIONS_NAME].BuffsPerLine)
-		..tostring(_G[ns.OPTIONS_NAME].BuffsVertical)
 		..tostring(_G[ns.OPTIONS_NAME].BuffsHideTooltip)
 		..tostring(_G[ns.OPTIONS_NAME].DebuffsScale)
-		..tostring(_G[ns.OPTIONS_NAME].MaxDebuffs)
-		..tostring(_G[ns.OPTIONS_NAME].DebuffsPerLine)
-		..tostring(_G[ns.OPTIONS_NAME].DebuffsVertical)
 		..tostring(_G[ns.OPTIONS_NAME].DebuffsHideTooltip)
 		..tostring(_G[ns.OPTIONS_NAME].HideBlizzardAuras)
 end
