@@ -19,7 +19,7 @@ local function l(localeName)
 end
 
 --- Function to display a tooltip
---- @param frame frame The frame to which the tooltip is attached
+--- @param frame Frame The frame to which the tooltip is attached
 --- @param title string The title of the tooltip
 --- @param text string The text of the tooltip (optional)
 --- @param anchor string The anchor of the tooltip (optional)

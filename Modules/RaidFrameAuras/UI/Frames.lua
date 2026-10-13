@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global, need-check-nil, assign-type-mismatch
 local addonName, ns = ...
 local l = ns.I18N;
 

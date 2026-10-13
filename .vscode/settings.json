@@ -55,7 +55,51 @@
         "CompactUnitFrame_UtilSetBuff",
         "CompactUnitFrame_IsAuraInstanceIDBlocked",
         "BOSS_DEBUFF_SIZE_INCREASE",
-        "tonumber"
+        "tonumber",
+        "C_AddOns",
+        "gsub",
+        "_G",
+        "format",
+        "string",
+        "AuraContainerSortDirection",
+        "issecretvalue",
+        "type",
+        "foreach",
+        "tostring",
+        "CreateFrame",
+        "InCombatLockdown",
+        "select",
+        "pcall",
+        "setmetatable",
+        "pairs",
+        "strtrim",
+        "math",
+        "C_EncodingUtil",
+        "table",
+        "wipe",
+        "strsub",
+        "ipairs",
+        "SetCVar",
+        "AnchorUtil",
+        "hooksecurefunc",
+        "C_CurveUtil",
+        "AuraUtil",
+        "CompactUnitFrame_UpdateAll",
+        "CompactUnitFrame_GetOptionShowBigDefensive",
+        "CompactUnitFrame_SetUnit",
+        "AuraContainerSortMethod",
+        "UnitIsMinion",
+        "tContains",
+        "C_Timer",
+        "next",
+        "PlaySound",
+        "unpack",
+        "UNIT_NAME_FONT",
+        "STANDARD_TEXT_FONT",
+        "MAX_RAID_MEMBERS",
+        "DAMAGE_TEXT_FONT",
+        "MEMBERS_PER_RAID_GROUP",
+        "KBDUI"
     ],
     "cSpell.words": [
         "prepatch"
@@ -96,6 +140,6 @@
         "utf8": "disable"
     },
     "Lua.workspace.library": [
-        "c:\\Users\\Utilisateur\\.cursor\\extensions\\ketho.wow-api-0.20.6\\Annotations\\Core"
+        "c:\\Users\\Utilisateur\\.cursor\\extensions\\ketho.wow-api-0.20.7\\Annotations\\Core"
     ]
 }
