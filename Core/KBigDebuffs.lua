@@ -186,11 +186,11 @@ function ns.InterfaceOptions_AddCategory(frame, addOn, position)
 
     if frame.parent then -- for subcategories
         local category = Settings.GetCategory(frame.parent);
-        local subcategory, layout = Settings.RegisterCanvasLayoutSubcategory(category, frame, frame.name, frame.name);
+        local subcategory, layout = Settings.RegisterCanvasLayoutSubcategory(category, frame, frame.name);
         subcategory.ID = frame.name;
         return subcategory, category;
     else
-        local category, layout = Settings.RegisterCanvasLayoutCategory(frame, frame.name, frame.name);
+        local category, layout = Settings.RegisterCanvasLayoutCategory(frame, frame.name);
         -- category.ID = frame.name;
 		ns.CATEGORY_ID = category:GetID()
         Settings.RegisterAddOnCategory(category);

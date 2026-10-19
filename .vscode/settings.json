@@ -99,7 +99,13 @@
         "MAX_RAID_MEMBERS",
         "DAMAGE_TEXT_FONT",
         "MEMBERS_PER_RAID_GROUP",
-        "KBDUI"
+        "KBDUI",
+        "FauxScrollFrame_GetOffset",
+        "GLYPH_SLOT_REMOVE_TOOLTIP",
+        "ADD",
+        "SPELLS",
+        "FauxScrollFrame_OnVerticalScroll",
+        "FauxScrollFrame_Update"
     ],
     "cSpell.words": [
         "prepatch"

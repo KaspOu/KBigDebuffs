@@ -51,7 +51,7 @@ end
 --- Reads the value currently held by a control
 --- @param control table The option control (checkbox, color, dropdown, slider)
 --- @param previousValue any Current option value (used to detect checkbox options)
---- @return any value nil if the control type is not supported
+--- @return any value, nil if the control type is not supported
 function ns.ReadControlValue(control, previousValue)
     if control.type == "color" then
         return control:GetColor();
@@ -60,6 +60,7 @@ function ns.ReadControlValue(control, previousValue)
     elseif type(previousValue) == "boolean" and control.GetChecked then
         return control:GetChecked();
     end
+    return nil
 end
 
 --- Writes a value into a control (does NOT notify: see ns._loadingControls)

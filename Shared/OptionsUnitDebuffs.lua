@@ -6,7 +6,7 @@ if ns.CONFLICT then return; end
 local DEFAULT_MAXBUFFS = ns.DEFAULT_MAXBUFFS or 3
 local DEFAULT_MAXDEBUFFS = DEFAULT_MAXBUFFS
 
-local function updatePerLineLabel(slider, iconsPerLine, maxIcons, l)
+local function updatePerLineLabel(slider, iconsPerLine, maxIcons)
     local l = ns.I18N;
 
     local shouldShowDefault = iconsPerLine >= maxIcons

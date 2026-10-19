@@ -31,8 +31,8 @@ local function showTooltip(frame, title, text, anchor)
 
 	GameTooltip:SetOwner(frame, anchor or "ANCHOR_RIGHT");
 	if (title ~= "") then
-		GameTooltip:SetText(l("WH")..title);
-		GameTooltip:AddLine(text, 1, 0.82, 0, 1);
+		GameTooltip:SetText(l("WH")..title); ---@diagnostic disable-line: missing-parameter
+		GameTooltip:AddLine(text, 1, 0.82, 0, true);
 	else
 		GameTooltip:SetText(text, 1, 0.82, 0, 1);
 	end
