@@ -23,6 +23,7 @@ local defaultOptions = {
 	BuffsSpacingX = 0,
 	BuffsSpacingY = 1,
 	BuffsFilter = "auto",
+	BuffsIgnored = {}, -- { id: N, name: '' }
 	BuffsHideTooltip = false,
 	DebuffsScale = 1.25,
 	MaxDebuffs = ns.DEFAULT_MAXDEBUFFS,
@@ -168,9 +169,7 @@ end
 
 
 function RequiredReloadOptionsString()
-	return tostring(_G[ns.OPTIONS_NAME].BuffsScale)
-		..tostring(_G[ns.OPTIONS_NAME].BuffsHideTooltip)
-		..tostring(_G[ns.OPTIONS_NAME].DebuffsScale)
+	return tostring(_G[ns.OPTIONS_NAME].BuffsHideTooltip)
 		..tostring(_G[ns.OPTIONS_NAME].DebuffsHideTooltip)
 		..tostring(_G[ns.OPTIONS_NAME].HideBlizzardAuras)
 end

@@ -105,12 +105,16 @@
         "ADD",
         "SPELLS",
         "FauxScrollFrame_OnVerticalScroll",
-        "FauxScrollFrame_Update"
+        "FauxScrollFrame_Update",
+        "UNKNOWN",
+        "NONE",
+        "CLEAR_ALL"
     ],
     "cSpell.words": [
         "prepatch"
     ],
     "Lua.diagnostics.disable": [
+        "duplicate-set-field"
     ],
     "peacock.color": "#1857a4",
     "workbench.colorCustomizations": {

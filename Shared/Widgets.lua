@@ -501,3 +501,21 @@ function K_SHARED_UI.DropDownWidget_OnLeave(self)
 end
 -- #endregion DropDown Widget
 
+-- #region Spell List Widget Stub
+--[[
+! TO BE OVERRIDDEN
+]]
+if not K_SHARED_UI.SpellListWidget_OnLoad then
+	function K_SHARED_UI.SpellListWidget_OnLoad(self)
+		self.type = "spellListStub";
+		AssignNameSpace_OnLoad(self)
+		ns.AddMsgErr("Spell List Widget not initialized, Widgets_SpellList.lua missing?", true);
+	end
+
+	function K_SHARED_UI.SpellListWidget_OnEnter(self)
+	end
+
+	function K_SHARED_UI.SpellListWidget_OnLeave(self)
+	end
+end
+-- #endregion
