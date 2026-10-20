@@ -110,6 +110,17 @@
 									</Anchor>
 								</Anchors>
 							</CheckButton>
+							<CheckButton parentKey="AddonCompartmentFilter" inherits="KBDUI_CheckboxWidget">
+								<Attributes>
+									<Attribute name="text" value="OPTION_COMPARTMENT_FILTER" />
+									<Attribute name="tooltip" value="OPTION_COMPARTMENT_FILTER_TOOLTIP" />
+								</Attributes>
+								<Anchors>
+									<Anchor point="TOPLEFT" relativeKey="$parent.ShowMsgNormal" relativePoint="TOPLEFT">
+										<Offset x="0" y="20"/>
+									</Anchor>
+								</Anchors>
+							</CheckButton>
 						</Frames>
 					</Frame>
 				</ScrollChild>

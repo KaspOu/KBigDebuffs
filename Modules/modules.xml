@@ -2,4 +2,5 @@
 ..\FrameXML\UI.xsd">
     <Include file="..\Shared\Module.lua"/>
     <Script file="UnitDebuffs.lua"/>
+    <Script file="AddonCompartmentFilter.lua"/>
 </Ui>

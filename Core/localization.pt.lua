@@ -95,4 +95,6 @@ l.OPTIONS_ASTERIX = l.YL.."*|r"..l.WH..": Op\195\167\195\182es que exigem um rec
 l.OPTION_SHOWMSGNORMAL = l.GYL.."Exibir mensagens";
 l.OPTION_SHOWMSGWARNING = l.GYL.."Exibir alertas";
 l.OPTION_SHOWMSGERR = l.GYL.."Exibir erros";
+l.OPTION_COMPARTMENT_FILTER = "Exibir no Filtro de Compartimento"..required;
+l.OPTION_COMPARTMENT_FILTER_TOOLTIP = "Na lista de addons no canto superior direito";
 l.OPTION_WHATSNEW = "Novidades";

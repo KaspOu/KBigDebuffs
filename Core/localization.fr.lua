@@ -95,6 +95,8 @@ l.OPTIONS_ASTERIX = l.YL.."*|r"..l.WH..": Options n\195\169cessitant un recharge
 l.OPTION_SHOWMSGNORMAL = l.GYL.."Afficher les messages";
 l.OPTION_SHOWMSGWARNING = l.GYL.."Afficher les alertes";
 l.OPTION_SHOWMSGERR = l.GYL.."Afficher les erreurs";
+l.OPTION_COMPARTMENT_FILTER = "Afficher dans le Compartment Filter"..required;
+l.OPTION_COMPARTMENT_FILTER_TOOLTIP = "Dans la liste des addons en haut à droite";
 l.OPTION_WHATSNEW = "Nouveaut\195\169s";
 
 --@do-not-package@

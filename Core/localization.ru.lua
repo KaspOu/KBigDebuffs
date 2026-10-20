@@ -94,4 +94,6 @@ l.OPTIONS_ASTERIX = l.YL.."*|r"..l.WH..": Настройки, требующие
 l.OPTION_SHOWMSGNORMAL = l.GYL.."Отображать сообщения";
 l.OPTION_SHOWMSGWARNING = l.GYL.."Отображать предупреждения";
 l.OPTION_SHOWMSGERR = l.GYL.."Отображать ошибки";
+l.OPTION_COMPARTMENT_FILTER = "Показывать в фильтре отсеков"..required; -- ChatGPT
+l.OPTION_COMPARTMENT_FILTER_TOOLTIP = "В списке дополнений в правом верхнем углу"; -- ChatGPT
 l.OPTION_WHATSNEW = "Что нового";

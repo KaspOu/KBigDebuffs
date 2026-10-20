@@ -41,6 +41,7 @@ local defaultOptions = {
 	ShowMsgNormal = true,
 	ShowMsgWarning = true,
 	ShowMsgError = false,
+	AddonCompartmentFilter = true,
 };
 
 
@@ -89,9 +90,12 @@ local function OnEvent(self, event, ...)
 		ns.RefreshOptions(defaultOptions);
 		ns.BindOptionControls(defaultOptions, RequiredReloadOptionsString);
 
-		-- Load Module (standalone addon)
-
-		ns.MODULES[1]:Init(_G[ns.OPTIONS_NAME]);
+		-- Load Modules
+		foreach(ns.MODULES,
+			function(_, module)
+				module:Init(_G[ns.OPTIONS_NAME]);
+			end
+        );
 	end
 	if (event == "ADDON_LOADED" and arg1 == "RaidFrameAuras") then
 		self:UnregisterEvent("ADDON_LOADED");

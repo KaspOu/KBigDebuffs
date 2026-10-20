@@ -1,3 +1,6 @@
+v12.1.503
+- AddOn Compartment Filter (Wow topright addons list)
+
 v12.1.502
 - Buffs & Debuffs: New option (Midnight / Forever):
  > Ignored buffs — hide specific buffs from your display

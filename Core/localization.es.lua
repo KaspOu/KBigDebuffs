@@ -95,4 +95,6 @@ l.OPTIONS_ASTERIX = l.YL.."*|r"..l.WH..": Opciones que requieren recarga";
 l.OPTION_SHOWMSGNORMAL = l.GYL.."Mostrar mensajes";
 l.OPTION_SHOWMSGWARNING = l.GYL.."Mostrar advertencias";
 l.OPTION_SHOWMSGERR = l.GYL.."Mostrar errores";
+l.OPTION_COMPARTMENT_FILTER = "Mostrar en el Filtro de Compartimentos"..required;
+l.OPTION_COMPARTMENT_FILTER_TOOLTIP = "En la lista de addons en la parte superior derecha";
 l.OPTION_WHATSNEW = "¿Qué hay de nuevo?";

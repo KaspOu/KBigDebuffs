@@ -108,7 +108,8 @@
         "FauxScrollFrame_Update",
         "UNKNOWN",
         "NONE",
-        "CLEAR_ALL"
+        "CLEAR_ALL",
+        "AddonCompartmentFrame"
     ],
     "cSpell.words": [
         "prepatch"
