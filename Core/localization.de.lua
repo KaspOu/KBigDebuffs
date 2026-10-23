@@ -10,12 +10,12 @@ l.VERS_TITLE    = format("%s %s", ns.TITLE, ns.VERSION);
 l.CONFLICT_MESSAGE = "Deaktiviert: Konflikt mit %s";
 
 l.SUBTITLE      = "Buff- / Debuff-Verwaltung";
-l.DESC          = "\195\132ndert Gruppen- / Raid-Buffs & Debuffs|r\n\n"
+l.DESC          = "Ändert Gruppen- / Raid-Buffs & Debuffs|r\n\n"
 .." - Skaliert Buffs/Debuffs \n\n"
-.." - Erh\195\182ht die maximale Anzahl angezeigter Buffs/Debuffs\n\n"
+.." - Erhöht die maximale Anzahl angezeigter Buffs/Debuffs\n\n"
 .." - Mehrzeilige Anzeige\n\n"
 .." - Relative X/Y-Position\n\n"
-.." - W\195\164hlbare Ausrichtung\n\n"
+.." - Wählbare Ausrichtung\n\n"
 l.OPTIONS_TITLE = format("%s - Optionen", l.VERS_TITLE);
 
 l.MSG_LOADED         = format("%s geladen und aktiv", l.VERS_TITLE);
@@ -31,42 +31,42 @@ l.OPTION_ORIENTATION_UpThenLeft = "Oben, dann nach links"
 l.OPTION_ORIENTATION_RightThenUp = "Rechts, dann nach oben"
 l.OPTION_ORIENTATION_RightThenUp_Default = l.DEFAULT.."Rechts, dann nach oben (Standard)"
 l.OPTION_ORIENTATION_UpThenRight = "Oben, dann nach rechts"
-l.OPTION_BUFFSSCALE = "Buff-Gr\195\182\195\159e ";
+l.OPTION_BUFFSSCALE = "Buff-Größe ";
 l.OPTION_BUFFSSCALE_TOOLTIP = l.CY.."Standard in Wow: 1"
 l.OPTION_MAXBUFFS = "Buff-Limit";
 l.OPTION_MAXBUFFS_TOOLTIP = "Maximale Anzahl der anzuzeigenden Buffs\n"..l.CY.."Standard in Wow: "..ns.DEFAULT_MAXBUFFS;
 l.OPTION_MAXBUFFS_FORMAT = "%d |4Buff:Buffs";
 l.OPTION_BUFFSPERLINE = "Buffs pro Reihe";
-l.OPTION_BUFFSPERLINE_TOOLTIP = "Anzahl der Buffs pro Reihe\n"..l.CY.."Ignoriert, wenn \195\188ber dem Limit";
+l.OPTION_BUFFSPERLINE_TOOLTIP = "Anzahl der Buffs pro Reihe\n"..l.CY.."Ignoriert, wenn über dem Limit";
 l.OPTION_BUFFSPERLINE_FORMAT = "%d pro Reihe";
 l.OPTION_BUFFSORIENTATION = "Buff-Ausrichtung";
-l.OPTION_BUFFSORIENTATION_TOOLTIP = "W\195\164hlen Sie die Anordnung der Buffs (unterst\195\188tzt Mehrzeilen)\n"..l.CY.."Standard: "..l.OPTION_ORIENTATION_LeftThenUp
+l.OPTION_BUFFSORIENTATION_TOOLTIP = "Wählen Sie die Anordnung der Buffs (unterstützt Mehrzeilen)\n"..l.CY.."Standard: "..l.OPTION_ORIENTATION_LeftThenUp
 l.OPTION_BUFFS_RELATIVE_X = "Horizontale Position";
 l.OPTION_BUFFS_RELATIVE_X_TOOLTIP = "Passen Sie die relative horizontale Position der Buffs an";
 l.OPTION_BUFFS_RELATIVE_Y = "Vertikale Position";
 l.OPTION_BUFFS_RELATIVE_Y_TOOLTIP = "Passen Sie die relative vertikale Position der Buffs an";
-l.OPTION_DEBUFFSSCALE = "Debuff-Gr\195\182\195\159e ";
+l.OPTION_DEBUFFSSCALE = "Debuff-Größe ";
 l.OPTION_DEBUFFSSCALE_TOOLTIP = l.CY.."Standard in Wow: 1"
 l.OPTION_MAXDEBUFFS = "Debuff-Limit";
 l.OPTION_MAXDEBUFFS_TOOLTIP = "Maximale Anzahl der anzuzeigenden Debuffs\n"..l.CY.."Standard in Wow: "..ns.DEFAULT_MAXDEBUFFS;
 l.OPTION_MAXDEBUFFS_FORMAT = "%d |4Debuff:Debuffs";
 l.OPTION_DEBUFFSPERLINE = "Debuffs pro Reihe";
-l.OPTION_DEBUFFSPERLINE_TOOLTIP = "Anzahl der Debuff-Symbole pro Reihe\n"..l.CY.."Ignoriert, wenn \195\188ber dem Limit";
+l.OPTION_DEBUFFSPERLINE_TOOLTIP = "Anzahl der Debuff-Symbole pro Reihe\n"..l.CY.."Ignoriert, wenn über dem Limit";
 l.OPTION_DEBUFFSPERLINE_FORMAT = "%d pro Reihe";
 l.OPTION_DEBUFFSORIENTATION = "Debuff-Ausrichtung";
-l.OPTION_DEBUFFSORIENTATION_TOOLTIP = "W\195\164hlen Sie die Anordnung der Debuffs (unterst\195\188tzt Mehrzeilen)\n"..l.CY.."Standard: "..l.OPTION_ORIENTATION_RightThenUp;
+l.OPTION_DEBUFFSORIENTATION_TOOLTIP = "Wählen Sie die Anordnung der Debuffs (unterstützt Mehrzeilen)\n"..l.CY.."Standard: "..l.OPTION_ORIENTATION_RightThenUp;
 l.OPTION_DEBUFFS_RELATIVE_X = "Horizontale Position";
 l.OPTION_DEBUFFS_RELATIVE_X_TOOLTIP = "Passen Sie die relative horizontale Position der Debuffs an";
 l.OPTION_DEBUFFS_RELATIVE_Y = "Vertikale Position";
 l.OPTION_DEBUFFS_RELATIVE_Y_TOOLTIP = "Passen Sie die relative vertikale Position der Debuffs an";
 l.OPTION_USETAINTMETHOD = l.CY.."Klassische Anzeige des Buff-/Debuff-Limits"..required.." "..l.ALERT
 l.OPTION_USETAINTMETHOD_TOOLTIP = "Deaktiviert, verwendet die experimentelle Anzeige\nAktiviert, verwendet die stabile Anzeige, aber mit einem "..l.RDL.."Fehler pro Sitzung|r, nicht so schlimm..."
-l.OPTION_BUFFS_TAINTWARNING = l.ALERT.." Das \195\164ndern des Limits verursacht einen "..l.RDL.."Fehler pro Sitzung|r, nicht so schlimm..."
-l.OPTION_BUFFS_FLICKERWARNING = l.INFO.." Die Neupositionierung kann f\195\188r einige Sekunden nach dem Tod eines Bosses beeintr\195\164chtigt sein"
+l.OPTION_BUFFS_TAINTWARNING = l.ALERT.." Das ändern des Limits verursacht einen "..l.RDL.."Fehler pro Sitzung|r, nicht so schlimm..."
+l.OPTION_BUFFS_FLICKERWARNING = l.INFO.." Die Neupositionierung kann für einige Sekunden nach dem Tod eines Bosses beeinträchtigt sein"
 l.OPTION_BUFFS_HIDEBLIZZARDAURAS = " Blizzard-Auren ausblenden"
-l.OPTION_BUFFS_RESET = "Alle Neupositionierungen r\195\188ckg\195\164ngig machen"
+l.OPTION_BUFFS_RESET = "Alle Neupositionierungen rückgängig machen"
 l.OPTION_FILTER_AUTO_DEFAULT = l.DEFAULT.."Auto — folgt dem Kampf (Standard)";
-l.OPTION_FILTER_RAID = "Immer die Liste au\195\159erhalb des Kampfes";
+l.OPTION_FILTER_RAID = "Immer die Liste außerhalb des Kampfes";
 l.OPTION_FILTER_RAID_IN_COMBAT = "Immer die Kampfliste";
 l.OPTION_BUFFS_SPACING_X = "Horizontaler Abstand";
 l.OPTION_BUFFS_SPACING_X_TOOLTIP = "Horizontaler Abstand in Pixeln zwischen Buff-Symbolen\n"..l.CY.."Standard: 0";
@@ -75,7 +75,7 @@ l.OPTION_BUFFS_SPACING_Y_TOOLTIP = "Vertikaler Abstand in Pixeln zwischen Buff-S
 l.OPTION_BUFFSFILTER = "Buff-Filter";
 l.OPTION_BUFFSFILTER_TOOLTIP = "Welche Buff-Liste Blizzard liefert\n"..l.CY.."Auto wechselt beim Betreten und Verlassen des Kampfes";
 l.OPTION_BUFFS_HIDETOOLTIP = "Buff-Tooltips ausblenden"..required;
-l.OPTION_BUFFS_HIDETOOLTIP_TOOLTIP = "Kein Tooltip beim \195\156berfahren eines Buff-Symbols\n"..l.RDL.."Deaktiviert auch den Rechtsklick zum Abbrechen eines Buffs";
+l.OPTION_BUFFS_HIDETOOLTIP_TOOLTIP = "Kein Tooltip beim Überfahren eines Buff-Symbols\n"..l.RDL.."Deaktiviert auch den Rechtsklick zum Abbrechen eines Buffs";
 l.OPTION_BUFFS_EXCLUDED = "Buffs ignoriert";
 l.OPTION_BUFFS_EXCLUDED_TITLE = "Buffs, die nicht angezeigt werden sollen";
 l.OPTION_BUFFS_EXCLUDED_PLACEHOLDER = "Spell name or Spell ID";
@@ -86,11 +86,11 @@ l.OPTION_DEBUFFS_SPACING_Y_TOOLTIP = "Vertikaler Abstand in Pixeln zwischen Debu
 l.OPTION_DEBUFFSFILTER = "Debuff-Filter";
 l.OPTION_DEBUFFSFILTER_TOOLTIP = "Welche Debuff-Liste Blizzard liefert\n"..l.CY.."Auto wechselt beim Betreten und Verlassen des Kampfes";
 l.OPTION_DEBUFFS_HIDETOOLTIP = "Debuff-Tooltips ausblenden"..required;
-l.OPTION_DEBUFFS_HIDETOOLTIP_TOOLTIP = "Kein Tooltip beim \195\156berfahren eines Debuff-Symbols\n"..l.RDL.."Deaktiviert auch den Rechtsklick zum Abbrechen eines Debuffs";
+l.OPTION_DEBUFFS_HIDETOOLTIP_TOOLTIP = "Kein Tooltip beim Überfahren eines Debuff-Symbols\n"..l.RDL.."Deaktiviert auch den Rechtsklick zum Abbrechen eines Debuffs";
 -- KBD END
 
-l.OPTION_RESET_OPTIONS = "Profil zur\195\188cksetzen";
-l.OPTION_RELOAD_REQUIRED = "Einige \195\132nderungen erfordern einen Neuladen (tippe: "..l.YL.."/reload|r )";
+l.OPTION_RESET_OPTIONS = "Profil zurücksetzen";
+l.OPTION_RELOAD_REQUIRED = "Einige Änderungen erfordern einen Neuladen (tippe: "..l.YL.."/reload|r )";
 l.OPTIONS_ASTERIX = l.YL.."*|r"..l.WH..": Optionen, die einen Neuladen erfordern";
 l.OPTION_SHOWMSGNORMAL = l.GYL.."Nachrichten anzeigen";
 l.OPTION_SHOWMSGWARNING = l.GYL.."Warnungen anzeigen";

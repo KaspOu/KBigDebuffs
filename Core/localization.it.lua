@@ -20,7 +20,7 @@ l.OPTIONS_TITLE = format("%s - Opzioni", l.VERS_TITLE);
 
 l.MSG_LOADED         = format("%s caricato e attivo", l.VERS_TITLE);
 
-l.INIT_FAILED = format("%s non si \195\170 inizializzato correttamente (conflitto ?)!", l.VERS_TITLE);
+l.INIT_FAILED = format("%s non si ê inizializzato correttamente (conflitto ?)!", l.VERS_TITLE);
 
 local required = l.YL.."*";
 -- KBD START
@@ -60,9 +60,9 @@ l.OPTION_DEBUFFS_RELATIVE_X_TOOLTIP = "Regola la posizione orizzontale relativa 
 l.OPTION_DEBUFFS_RELATIVE_Y = "Posizione verticale";
 l.OPTION_DEBUFFS_RELATIVE_Y_TOOLTIP = "Regola la posizione verticale relativa dei debuff";
 l.OPTION_USETAINTMETHOD = l.CY.."Visualizzazione classica del Limite di buff / debuff"..required.." "..l.ALERT
-l.OPTION_USETAINTMETHOD_TOOLTIP = "Deselezionato, usa la visualizzazione sperimentale\nSelezionato, usa la visualizzazione stabile, ma con un "..l.RDL.."errore per sessione|r, non cos\195\174 grave..."
-l.OPTION_BUFFS_TAINTWARNING = l.ALERT.." Cambiare il Limite provoca un "..l.RDL.."errore per sessione|r, non cos\195\174 grave..."
-l.OPTION_BUFFS_FLICKERWARNING = l.INFO.." Il riposizionamento pu\195\170 essere influenzato per alcuni secondi alla morte di un boss"
+l.OPTION_USETAINTMETHOD_TOOLTIP = "Deselezionato, usa la visualizzazione sperimentale\nSelezionato, usa la visualizzazione stabile, ma con un "..l.RDL.."errore per sessione|r, non cosî grave..."
+l.OPTION_BUFFS_TAINTWARNING = l.ALERT.." Cambiare il Limite provoca un "..l.RDL.."errore per sessione|r, non cosî grave..."
+l.OPTION_BUFFS_FLICKERWARNING = l.INFO.." Il riposizionamento puê essere influenzato per alcuni secondi alla morte di un boss"
 l.OPTION_BUFFS_HIDEBLIZZARDAURAS = " Nascondere le aure Blizzard"
 l.OPTION_BUFFS_RESET = "Annulla tutto il riposizionamento"
 l.OPTION_FILTER_AUTO_DEFAULT = l.DEFAULT.."Auto — segue il combattimento (predefinito)";
@@ -97,4 +97,4 @@ l.OPTION_SHOWMSGWARNING = l.GYL.."Mostra avvisi";
 l.OPTION_SHOWMSGERR = l.GYL.."Mostra errori";
 l.OPTION_COMPARTMENT_FILTER = "Mostra nel Compartment Filter"..required;
 l.OPTION_COMPARTMENT_FILTER_TOOLTIP = "Nella lista degli addon in alto a destra";
-l.OPTION_WHATSNEW = "Novit\195\160";
+l.OPTION_WHATSNEW = "Novità";
