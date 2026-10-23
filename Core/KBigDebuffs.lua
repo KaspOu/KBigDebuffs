@@ -23,7 +23,7 @@ local defaultOptions = {
 	BuffsSpacingX = 0,
 	BuffsSpacingY = 1,
 	BuffsFilter = "auto",
-	BuffsIgnored = {}, -- { id: N, name: '' }
+	BuffsExcluded = {}, -- { [id]: true }
 	BuffsHideTooltip = false,
 	DebuffsScale = 1.25,
 	MaxDebuffs = ns.DEFAULT_MAXDEBUFFS,
@@ -54,6 +54,10 @@ function ns.RemoveOldOptions(options)
 	if  options.DebuffsVertical ~= nil then
 		options.DebuffsOrientation = options.DebuffsVertical and "UpThenRight" or options.DebuffsOrientation
 		options.DebuffsVertical = nil
+	end
+	if options.BuffsIgnored then
+		options.BuffsExcluded = options.BuffsIgnored
+		options.BuffsIgnored = nil
 	end
 end
 

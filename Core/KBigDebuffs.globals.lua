@@ -1,7 +1,7 @@
 local addonName, ns = ...
 ns.VERSION       = C_AddOns.GetAddOnMetadata(addonName, "Version");
 ns.VERSIONNR     = tonumber(gsub(ns.VERSION, "%D", ""), 10);
-ns.ADDON_NAME,ns.TITLE, ns.NOTES = C_AddOns.GetAddOnInfo(addonName);
+ns.ADDON_NAME,ns.TITLE = C_AddOns.GetAddOnInfo(addonName);
 ns.OPTIONS_NAME = "KBigDebuffsOptions";
 ns.SLASHCMD = "KBD"
 
