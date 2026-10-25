@@ -18,12 +18,7 @@ Commands:
   
 If you are looking for more options, I recommend you **Kallye Raid Frames**  
 https://www.curseforge.com/wow/addons/kallye-raid-frames  
-  
-  
-  
-**Known errors**  
-Classic / Mists: One error by session while changing Max (De)buffs setting, expected. Explicit warning added  
-Just after a boss kill, buffs & debuffs positions may flicker (back to Blizzard defaults until out of combat).  
+
   
   
 https://www.curseforge.com/members/kaspou/projects
