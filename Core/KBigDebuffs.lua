@@ -42,6 +42,7 @@ local defaultOptions = {
 	ShowMsgWarning = true,
 	ShowMsgError = false,
 	AddonCompartmentFilter = true,
+	ForceEnglish = false,
 };
 
 
@@ -177,7 +178,8 @@ end
 
 
 function RequiredReloadOptionsString()
-	return tostring(_G[ns.OPTIONS_NAME].BuffsHideTooltip)
+	return tostring(_G[ns.OPTIONS_NAME].ForceEnglish)
+		..tostring(_G[ns.OPTIONS_NAME].BuffsHideTooltip)
 		..tostring(_G[ns.OPTIONS_NAME].DebuffsHideTooltip)
 		..tostring(_G[ns.OPTIONS_NAME].HideBlizzardAuras)
 end
